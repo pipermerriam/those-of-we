@@ -3,9 +3,9 @@
 **Engine:** Godot 4.x  
 **Genre:** Factory automation with biological progression  
 **Initial Prototype:** Stage 1 - Single Cell Survival  
-**Status:** Early planning phase
+**Status:** In Progress
 
-This document merges the game design from README.md with the technical implementation plan for the first playable prototype.
+This document defines the technical implementation plan for the first playable prototype.
 
 ---
 
@@ -13,10 +13,12 @@ This document merges the game design from README.md with the technical implement
 
 Play as a single bacterium in a microscopic world, fighting viruses and other threats. Gather resources, reproduce, and eventually infect larger organisms. The core experience: **weak but clever** - you program your cell to survive.
 
-### From README.md
-- **Stage 1:** Single-cell survival with programmable components
-- **Stage 2:** Infection mechanics (out of prototype scope)
-- **Stage 3:** Planetary automation (out of prototype scope)
+See `GDD.md` for full game design details.
+
+### Development Goals
+- **Stage 1:** Single-cell survival with programmable components (current focus)
+- **Stage 2:** Infection mechanics (post-prototype)
+- **Stage 3:** Planetary automation (post-prototype)
 
 ---
 
@@ -42,41 +44,18 @@ The first playable version focuses purely on single-cell gameplay:
 ## Milestone 1: Foundation & Setup
 
 ### 1.1 Godot Project Setup
-- [ ] Install Godot 4.x engine (https://godotengine.org/download)
-  - Download Linux 64-bit version
-  - Extract to ~/bin/godot or system location
-  - Verify: `godot --version`
-- [ ] Configure project settings:
-  - Resolution: 1280x720 or 1920x1080
+- [x] Configure project settings:
+  - Resolution: 1280x720
   - Pixel-perfect 2D mode
-  - Input map configuration (see below)
-- [ ] Set up project folder structure:
-  ```
-  res://
-  ├── assets/
-  │   ├── art/
-  │   │   ├── cells/              # Player and enemy cells
-  │   │   ├── particles/          # Resource particles, effects
-  │   │   ├── ui/                 # Interfaces
-  │   │   └── backgrounds/        # World backgrounds
-  │   ├── audio/
-  │   └── fonts/
-  ├── scenes/
-  │   ├── ui/
-  │   ├── cells/
-  │   ├── environment/
-  │   ├── components/             # Cell components as scenes
-  │   └── _autoload/
-  ├── scripts/
-  │   ├── systems/
-  │   └── utils/
-  └── resources/                  # Data definitions
-  ```
+  - Input map configuration
+- [x] Set up project folder structure
+- [x] Initialize git repository
+- [x] Push to GitHub
 
 ### 1.2 Version Control
-- [ ] Initialize local git repository
-- [ ] Create `.gitignore` for Godot projects
-- [ ] Initial commit
+- [x] Create `.gitignore` for Godot projects
+- [x] Initial commit with project structure
+- [x] Push to origin remote
 
 ---
 
@@ -114,7 +93,7 @@ Configure Input Map:
 - [ ] Background: Microscopic fluid with parallax particles
 - [ ] Soft gradient lighting
 
-### 3.2 Resources (from README.md resources list)
+### 3.2 Resources
 
 | Resource | Visual | Gathering Method |
 |----------|--------|------------------|
@@ -135,7 +114,6 @@ Configure Input Map:
 ## Milestone 4: Component System (Prototype Version)
 
 ### 4.1 Implemented Components (Subset)
-From full design, implement minimal viable set:
 
 | Component | Function | Space Cost |
 |-----------|----------|------------|
@@ -151,14 +129,6 @@ From full design, implement minimal viable set:
 - [ ] Simple connections: Output → Input
 - [ ] Energy budget display
 - [ ] Component shop/crafting (spend Amino Acids to build)
-
-### 4.3 Example Program
-```
-[Simplified Manual Control]
-Chemoreceptor (Glucose) → Display gradient on HUD
-Flagellum responds to WASD / click-move automatically
-Mitochondria runs when Glucose present
-```
 
 ---
 
@@ -178,7 +148,7 @@ Mitochondria runs when Glucose present
 ### 5.3 Programming Overlay
 - [ ] Full-screen or side-panel programming grid
 - [ ] Component palette (drag from here)
-- [ ) Current energy budget vs consumption
+- [ ] Current energy budget vs consumption
 - [ ] Close with Tab or X button
 
 ### 5.4 Death & Respawn
@@ -203,48 +173,10 @@ Mitochondria runs when Glucose present
 
 ---
 
-## Art Assets
-
-### Visual Style Decisions
-- **Style:** Microscopic look with soft lighting, translucent membranes
-- **Palette:** Cool blues/cyans for water, warm yellows/oranges for resources, purples for threats
-- **Scale:** Cell is ~64-128px diameter, world is ~2000x2000px
-
-### Required Assets
-
-**Player:**
-- [ ] Cell body (circular, semi-transparent membrane)
-- [ ] Nucleus blob inside
-- [ ] Flagellum animation (simple wiggle)
-- [ ] Membrane damage states (cracks, holes)
-
-**Resources:**
-- [ ] Glucose particle (hexagon, yellow)
-- [ ] Amino acid particle (chain, orange)
-- [ ] Ion particle (dot with glow, cyan)
-
-**World:**
-- [ ] Petri dish edge/boundary
-- [ ] Background fluid (tileable or large texture)
-- [ ] Floating debris/dust particles
-
-**UI:**
-- [ ] Title screen background (microscopic vista)
-- [ ] Component icons (mitochondria, vacuole, etc.)
-- [ ] Resource icons
-- [ ] ATP gauge fill graphics
-
-**VFX:**
-- [ ] Absorption effect (particle swirl)
-- [ ] ATP generation pulse
-- [ ] Membrane breach effect
-
----
-
 ## Development Phases
 
 ### Phase 1: Skeleton (Days 1-3)
-1. Godot install + project setup
+1. ~~Godot setup + project structure~~ ✓
 2. Basic cell movement (WASD + click)
 3. Simple world with boundary
 4. Placeholder sprites (colored circles)
@@ -295,10 +227,6 @@ Mitochondria runs when Glucose present
 - Use `YSort` for proper layering
 - Avoid physics bodies for small particles (use Area2D)
 
-### Persistence (Optional)
-- Save/load component layouts
-- Track basic stats
-
 ---
 
 ## Future (Post-Prototype)
@@ -313,13 +241,5 @@ Not in scope but on the roadmap:
 
 ---
 
-## Dependencies
-
-1. Godot 4.x download/install
-2. Git for version control
-3. Gemini image generation access (✓ confirmed available)
-
----
-
 *Last Updated: 2026-04-15*  
-*Related: README.md (design), combat.md (mechanics)*
+*See also: `GDD.md` (design), `ASSETS.md` (art), `combat.md` (mechanics)*

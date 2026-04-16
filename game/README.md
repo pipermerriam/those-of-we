@@ -1,14 +1,14 @@
-# Those of We
-
-A factory automation game with biological progression.
+# Those of We - Game Project
 
 Built with Godot 4.x
 
-## Setup
+## Quick Start
 
-1. Install Godot 4.x: https://godotengine.org/download
-2. Open this folder (`game/`) in Godot
-3. Press Play (F5) to run
+```bash
+# From this directory
+godot .  
+# Or open project.godot in Godot editor
+```
 
 ## Project Structure
 
@@ -16,12 +16,12 @@ Built with Godot 4.x
 res://
 ├── assets/
 │   ├── art/
-│   │   ├── cells/      # Player and enemy cell sprites
-│   │   ├── resources/  # Glucose, amino acids, ions
-│   │   ├── environment/# Background, particles
-│   │   ├── components/ # Component icons for UI
-│   │   ├── ui/         # Interface elements
-│   │   └── vfx/        # Particle effects
+│   │   ├── cells/       # Player and enemy cells
+│   │   ├── resources/   # Glucose, amino acids, ions
+│   │   ├── environment/ # Backgrounds, particles
+│   │   ├── components/  # Component UI icons
+│   │   ├── ui/          # Interface elements
+│   │   └── vfx/         # Particle effects
 │   ├── audio/
 │   └── fonts/
 ├── scenes/
@@ -29,16 +29,21 @@ res://
 │   ├── cells/
 │   ├── environment/
 │   ├── components/
-│   └── _autoload/
+│   └── _autoload/       # Singletons/autoloads
 ├── scripts/
 │   ├── systems/
 │   └── utils/
-└── resources/
+└── resources/           # Godot Resource definitions
 ```
 
 ## Documentation
 
-- `../README.md` - Game design document
-- `../PLAN.md` - Implementation plan and milestones
-- `../ASSETS.md` - Art asset specifications
-- `../combat.md` - Combat mechanics deep-dive
+See `../docs/` for all design and planning documents:
+- `GDD.md` - Game Design Document
+- `PLAN.md` - Implementation plan and milestones
+- `ASSETS.md` - Art asset specifications
+- `combat.md` - Combat mechanics deep-dive
+
+---
+
+*For contributing guidelines and project setup, see `../README.md`*

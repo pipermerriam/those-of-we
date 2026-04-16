@@ -86,3 +86,7 @@ Player should feel like they're solving puzzles, not grinding stats:
 - Cannot out-last environment → must out-plan
 
 Victory conditions are environmental setup, not stat accumulation.
+
+---
+
+*See also: `GDD.md` for full game design, `PLAN.md` for implementation*

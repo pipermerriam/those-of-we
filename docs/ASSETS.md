@@ -133,7 +133,7 @@ vfx_absorb_swirl.png
 ## Storage
 
 ```
-those-of-we/assets/art/
+game/assets/art/
 ├── cells/
 │   ├── player/
 │   └── enemies/
@@ -146,4 +146,4 @@ those-of-we/assets/art/
 
 ---
 
-*Reference: PLAN.md for prototype scope*
+*Reference: `PLAN.md` for prototype scope, `GDD.md` for design*
