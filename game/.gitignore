@@ -1,0 +1,13 @@
+# Godot 4.x
+.import/
+export.cfg
+export_presets.cfg
+*.tmp
+# Mono/C#
+.mono/
+data_*
+# System/tool-specific
+*.directory
+*~
+.DS_Store
+Thumbs.db
