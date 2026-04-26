@@ -20,6 +20,14 @@ Built with Godot 4.x.
   ln -sf Godot_v4.6.2-stable_linux.x86_64 godot
   export PATH="$HOME/bin:$PATH"
   ```
+* Export Templates (required for building) - Download and install:
+  ```bash
+  mkdir -p ~/.local/share/godot/export_templates/4.6.2.stable
+  cd ~/.local/share/godot/export_templates/4.6.2.stable
+  curl -L -o templates.tpz "https://github.com/godotengine/godot/releases/download/4.6.2-stable/Godot_v4.6.2-stable_export_templates.tpz"
+  unzip -o templates.tpz
+  mv templates/* . && rmdir templates
+  ```
 * Git
 
 ### Clone and Run
