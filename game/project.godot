@@ -15,6 +15,7 @@ config/description="A factory automation game with biological progression. Start
 config/version="0.1.0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+run/main_scene="res://scenes/environment/world.tscn"
 
 [display]
 

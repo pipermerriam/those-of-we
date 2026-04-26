@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqmysonulqksw"]
+
+[ext_resource type="PackedScene" uid="uid://c8yvxg3ulq3a" path="res://scenes/characters/player.tscn" id="1_v73nj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3r1oy"]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.102, 0.227, 0.322, 1)
+scale = Vector2(2000, 2000)
+texture = SubResource("PlaceholderTexture2D_3r1oy")
+
+[node name="Player" parent="." instance=ExtResource("1_v73nj")]
+
+[node name="WorldBounds" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D_Top" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(0, -550)
+
+[node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(0, 550)
+
+[node name="CollisionShape2D_Left" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(-950, 0)
+
+[node name="CollisionShape2D_Right" type="CollisionShape2D" parent="WorldBounds"]
+position = Vector2(950, 0)
